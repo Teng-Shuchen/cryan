@@ -67,8 +67,8 @@ export default {
   }],
   // page6部分
   page6: {
-    weixin: "<img style='width:120px' src='../src/img/weixin.png' alt='加载失败'>",
-    qq: "<img style='width:120px' src='../src/img/qq.jpg' alt='加载失败'>",
-    test: "<img style='width:120px' src='../src/img/email.png' alt='加载失败'>"
+    weixin: "<img style='width:120px' src='./src/img/weixin.png' alt='加载失败'>",
+    qq: "<img style='width:120px' src='./src/img/qq.jpg' alt='加载失败'>",
+    test: "<img style='width:120px' src='./src/img/email.png' alt='加载失败'>"
   }
 }
