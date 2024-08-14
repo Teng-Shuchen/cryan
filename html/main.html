@@ -1,0 +1,338 @@
+<div id="wrap">
+    <section class="header-area header-bg">
+        <div id="particles" class="particles"></div>
+        <audio src="../src/viedo/Background_Music.MP3" autoplay="autoplay" loop="loop"
+               controls="controls" preload="auto"
+               style="position: fixed; /* 固定位置 */
+  top: 10px;
+  right: 10px;
+  z-index: 1000;opacity: 0.5;"></audio>
+        <div class="page page1" id="page1" name="page1">
+            <div class="page1-box container animateload">
+                <div class="row">
+                    <div class="col-lg-10 col-md-10 col-sm-10 col-lg-offset-1 col-md-offset-1 col-sm-offset-1 box-page">
+                        <h1>{{page1.titleEn}}</h1>
+                        <p class="box-info">{{page1.title}}</p>
+                        <p class="box-font"> 本页面背景图片和背景音乐
+                            <span class="box-change">都由AI模型生成</span></p>
+                    </div>
+                </div>
+
+                <a class="next-bt navbtn" href="#next-one"><span>Read more</span></a>
+
+            </div>
+
+        </div>
+
+        <div class="page page2" id="next-one" name="next-one">
+            <div class="page2-box container">
+                <div class="row">
+                    <div class="col-xs-12 col-md-5">
+                        <div class="box-image">
+                            <img src="../src/img/{{page2.authorImg}}">
+                        </div>
+                    </div>
+                    <div class="col-xs-12 col-md-7 box-info">
+                        <h1 class="page-title">About Me</h1>
+                        <h2>- 你好</h2>
+                        <p>{{page2.xinhui}}</p>
+                        <h2>- 关于我</h2>
+                        <p>{{page2.guanyuwo}}</p>
+                        <p>欢迎大家交流，最后留有我的联系方式~~</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="page page4" id="page3" name="page4">
+            <div class="page3-box container">
+                <div class="row">
+                    <div class="col-xs-12 col-md-6">
+                        <div class="box-left">
+                            <h1 class="page-title">教育经历</h1>
+                            <div class="left-body">
+                                <ul>
+                                    {{#each page4.course}}
+                                    <li>
+                                        <div class="title orange"></div>
+                                        <div class="date" style="font-size: 12px">{{this.date}}</div>
+                                        <div class="desc">
+                                            <h3 style="color: #4cae4c">{{this.desc.title}}</h3>
+                                            <p>{{#each this.desc.list}}</p>
+                                            <h3>{{this}}</h3>
+                                            {{/each}}
+                                        </div>
+                                    </li>
+                                    {{/each}}
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xs-12 col-md-6 box-right">
+
+                        <br><br><br>
+                        <h4>
+                            水利部”智慧水利“平台分项之一，该项目旨在开发高精度、高适应性的流域产汇流和洪水预报模型，并通过人工智能技术提升水文模型的智能化水平，实现智慧模拟和决策。
+                        </h4>
+                        <div>
+<!--                            .....-->
+                        </div>
+                        <br><br>
+                        <div class="video-container" style="text-align:center">
+                            <!-- 视频元素 -->
+                            <video
+                                    height="240"
+                                    controls
+                                    loop
+                                    muted
+                                    poster="../src/img/智慧平台.png"
+                            >
+                                <source src="../src/viedo/智慧化平台演示.mp4" type="video/mp4">
+                                Your browser does not support the video tag.
+                            </video>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <script>
+            document.getElementById('downloadButton').addEventListener('click', function() {
+                var fileUrl = '../src/Transformer_VQ-VAE.txt';
+
+                fetch(fileUrl)
+                    .then(response => response.blob())
+                    .then(blob => {
+                        var url = window.URL.createObjectURL(blob);
+                        var a = document.createElement('a');
+                        a.style.display = 'none';
+                        a.href = url;
+                        a.download = 'Transformer_VQ-VAE.txt';
+                        document.body.appendChild(a);
+                        a.click();
+                        window.URL.revokeObjectURL(url);
+                        document.body.removeChild(a);
+                    })
+                    .catch(e => console.error('下载失败:', e));
+            });
+        </script>
+
+        <style>
+            .download-button {
+                padding: 10px 20px; /* 按钮内边距 */
+                font-size: 16px; /* 字体大小 */
+                color: #fff; /* 文字颜色 */
+                background-color: #007BFF; /* 背景颜色 */
+                border: none; /* 边框 */
+                border-radius: 5px; /* 边框圆角 */
+                cursor: pointer; /* 鼠标悬停时的光标 */
+                transition: background-color 0.3s; /* 背景颜色变化的过渡效果 */
+            }
+            .download-button:hover {
+                background-color: #0056b3; /* 鼠标悬停时的背景颜色 */
+            }
+        </style>
+
+        <!--    自动驾驶模块-->
+        <div class="page page4" id="page4" name="page4">
+            <div class="page3-box container">
+                <!--        <div class="row">-->
+                <div class="col-xs-12 col-md-6">
+                    <div class="box-left">
+                        <h1 class="page-title">自动驾驶AI模型开发</h1>
+                        <div class="left-body">
+                            <div class="desc" style="font-size: 18px">
+                                <h4>本模型为基于Transformer和VQ-VAE开发的自动驾驶模型</h4>
+                                <ul><br>
+                                    <li>Transformer模块接收（obs_seq）和（可选的）目标序列（goal_seq）作为输入，并预测与这些输入相对应的码本索引集。
+                                        每个码本索引都唯一对应于预先定义的码本向量。</li>
+                                    <br>
+                                    <li> VQ-VAE解码器结合训练时存储的残差将这些离散的码本向量映射回原始连续动作空间中的真实动作指令。</li>
+                                    <br>
+                                    <li>多模态输入 -> Transformer模块 -> 码本索引集 -> 码本向量集
+                                    <br>-> VQ-VAE解码器 -> 真实动作指令</li>
+                                    <br>
+                                    <li>这里提供了模型前向传播的逻辑实现源码文件 <button id="downloadButton" class="download-button">下载</button>
+                                        <br>后续会把模型完整源码放到Github
+                                        <br>注：本模型不涉及任何公司闭源代码
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xs-12 col-md-6 box-right">
+                    <br><br><br>
+                    <!--            四个视频-->
+                    <div class="image-container" style="display: flex;
+  flex-wrap: wrap;  /* 允许换行 */
+  justify-content: space-between;
+  align-items: flex-start;  /* 垂直对齐到顶部 */
+  width: 100%;
+  padding: 10px;">
+                        <div class="image-wrapper" style="width: calc(50% - 10px); /* 减去间距，确保图片宽度为容器宽度的一半 */
+  margin-bottom: 10px;  /* 每行图片之间的间距 */
+  position: relative;  /* 相对定位，以便文字可以绝对定位到图片上方 */">
+                            <p style="position: absolute;  /* 绝对定位到图片上方 */
+  top: 10px;  /* 距离图片顶部的距离 */
+  left: 10px;  /* 距离图片左侧的距离 */
+  color: #fff;  /* 文字颜色，根据背景色调整 */
+  background-color: rgba(0, 0, 0, 0.5);  /* 背景颜色，半透明效果 */
+  padding: 5px;  /* 文字内边距 */
+  border-radius: 5px;  /* 文字背景圆角 */
+  font-size: 16px;  /* 文字大小 */
+  z-index: 10;  /* 确保文字在图片上方 */">直线路段</p>
+                            <video height="240" autoplay controls loop muted style="width: 100%;  /* 图片宽度设为容器宽度 */
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;">
+                                <source src="../src/viedo/Straight.mp4" type="video/mp4">
+                            </video>
+                        </div>
+                        <div class="image-wrapper" style="width: calc(50% - 10px); /* 减去间距，确保图片宽度为容器宽度的一半 */
+  margin-bottom: 10px;  /* 每行图片之间的间距 */
+  position: relative;  /* 相对定位，以便文字可以绝对定位到图片上方 */">
+                            <p style="position: absolute;  /* 绝对定位到图片上方 */
+  top: 10px;  /* 距离图片顶部的距离 */
+  left: 10px;  /* 距离图片左侧的距离 */
+  color: #fff;  /* 文字颜色，根据背景色调整 */
+  background-color: rgba(0, 0, 0, 0.5);  /* 背景颜色，半透明效果 */
+  padding: 5px;  /* 文字内边距 */
+  border-radius: 5px;  /* 文字背景圆角 */
+  font-size: 16px;  /* 文字大小 */
+  z-index: 10;  /* 确保文字在图片上方 */">十字路口</p>
+                            <video height="240" autoplay controls loop muted style="width: 100%;  /* 图片宽度设为容器宽度 */
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;">
+                                <source src="../src/viedo/crossroads.mp4" type="video/mp4">
+                            </video>
+                        </div>
+                        <div class="image-wrapper" style="width: calc(50% - 10px); /* 减去间距，确保图片宽度为容器宽度的一半 */
+  margin-bottom: 10px;  /* 每行图片之间的间距 */
+  position: relative;  /* 相对定位，以便文字可以绝对定位到图片上方 */">
+                            <p style="position: absolute;  /* 绝对定位到图片上方 */
+  top: 10px;  /* 距离图片顶部的距离 */
+  left: 10px;  /* 距离图片左侧的距离 */
+  color: #fff;  /* 文字颜色，根据背景色调整 */
+  background-color: rgba(0, 0, 0, 0.5);  /* 背景颜色，半透明效果 */
+  padding: 5px;  /* 文字内边距 */
+  border-radius: 5px;  /* 文字背景圆角 */
+  font-size: 16px;  /* 文字大小 */
+  z-index: 10;  /* 确保文字在图片上方 */">赛车路段</p>
+                            <video height="240" autoplay controls loop muted style="width: 100%;  /* 图片宽度设为容器宽度 */
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;">
+                                <source src="../src/viedo/RaceTrack.mp4" type="video/mp4">
+                            </video>
+                        </div>
+                        <div class="image-wrapper" style="width: calc(50% - 10px); /* 减去间距，确保图片宽度为容器宽度的一半 */
+  margin-bottom: 10px;  /* 每行图片之间的间距 */
+  position: relative;  /* 相对定位，以便文字可以绝对定位到图片上方 */">
+                            <p style="position: absolute;  /* 绝对定位到图片上方 */
+  top: 10px;  /* 距离图片顶部的距离 */
+  left: 10px;  /* 距离图片左侧的距离 */
+  color: #fff;  /* 文字颜色，根据背景色调整 */
+  background-color: rgba(0, 0, 0, 0.5);  /* 背景颜色，半透明效果 */
+  padding: 5px;  /* 文字内边距 */
+  border-radius: 5px;  /* 文字背景圆角 */
+  font-size: 16px;  /* 文字大小 */
+  z-index: 10;  /* 确保文字在图片上方 */">立交桥</p>
+                            <video height="240" autoplay controls loop muted style="width: 100%;  /* 图片宽度设为容器宽度 */
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;">
+                                <source src="../src/viedo/turntable.mp4" type="video/mp4">
+                            </video>
+                        </div>
+                    </div>
+                    <div class="video-container" style="text-align:center">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="page page5" id="page5" name="page5">
+            <div class="page3-box container">
+                <h1 class="page-title">发挥创意 (Stable Diffusion 模型生成) </h1>
+                <div class="row">
+                    {{#each page5}}
+                    <div class="col-lg-4 col-md-6 col-sm-12">
+                        <a class="box-item">
+                            <div class="item-zhez">
+                                <h4>{{this.title}}</h4>
+                                <P>{{this.content}}</P>
+                            </div>
+                            <img src="./src/AI_Img/{{this.image}}">
+                        </a>
+                    </div>
+                    {{/each}}
+                </div>
+            </div>
+        </div>
+
+        <div class="page page6" id="page6" name="page6">
+            <div class="page3-box container">
+                <div class="row">
+                    <div class="col-lg-6 col-md-6 col-sm-6 col-lg-offset-3 col-md-offset-3 col-sm-offset-3">
+                        <div class="box-page">
+                            <h2>PLEASE <span>CONTACT ME</span></h2>
+                            <ul class="page-tag">
+                                <li style="color: orangered">灵感</li>
+                                <li style="color: lightseagreen">代码</li>
+                                <li style="color: dodgerblue">梦想</li>
+                                <li style="color: dodgerblue">未来</li>
+                            </ul>
+                            <P> 兴趣是最好的老师</P>
+                            <ul class="page-list">
+                                <li><a class="element" role="button" data-placement="top" tabindex="2"
+                                       data-toggle="popover"
+                                       data-trigger="focus" data-html="true" title="邮箱" data-content="{{page6.test}}"><i
+                                        class="iconfont icon-youxiang"></i></a></li>
+
+                                <li><a class="element" role="button" data-placement="top" tabindex="0"
+                                       data-toggle="popover"
+                                       data-trigger="focus" title="我的微信" data-html="true"
+                                       data-content="{{page6.weixin}}"><i class="iconfont icon-weixin1"></i></a></li>
+                                <li><a class="element" role="button" data-placement="top" tabindex="1"
+                                       data-toggle="popover"
+                                       data-trigger="focus" data-html="true" title="我的QQ" data-content="{{page6.qq}}"><i
+                                        class="iconfont icon-qq"></i></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <div id="navbar">
+            <div class="navbar-line"></div>
+            <div class="navbar-list">
+                <a class="navbtn" href="#page1"></a>
+                <a class="navbtn" href="#next-one"></a>
+                <a class="navbtn" href="#page3"></a>
+                <a class="navbtn" href="#page4"></a>
+                <a class="navbtn" href="#page5"></a>
+                <a class="navbtn" href="#page6"></a>
+            </div>
+        </div>
+        <div id="navbar-banner">
+            <div class="container">
+                <div class="clearFix"><span class="iconfont icon-lie slideBut" id="slideBut"></span></div>
+                <ul id="slideList">
+                    <li><a class="navbtn" href="#page1">Home</a></li>
+                    <li><a class="navbtn" href="#next-one">About Me</a></li>
+                    <li><a class="navbtn" href="#page3">My services</a></li>
+                    <li><a class="navbtn" href="#page4">Mastering</a></li>
+                    <li><a class="navbtn" href="#page5">Production</a></li>
+                    <li><a class="navbtn" href="#page6">Please Contact Me</a></li>
+                </ul>
+            </div>
+        </div>
+
+    </section>
+
+</div>
