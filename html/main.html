@@ -1,7 +1,7 @@
 <div id="wrap">
     <section class="header-area header-bg">
         <div id="particles" class="particles"></div>
-        <audio src="https://github.com/Teng-Shuchen/cryan/tree/main/src/viedo/Background_Music.MP3" autoplay="autoplay" loop="loop"
+        <audio src="./src/viedo/Background_Music.MP3" autoplay="autoplay" loop="loop"
                controls="controls" preload="auto"
                style="position: fixed; /* 固定位置 */
   top: 10px;
@@ -29,7 +29,7 @@
                 <div class="row">
                     <div class="col-xs-12 col-md-5">
                         <div class="box-image">
-                            <img src="../src/img/{{page2.authorImg}}">
+                            <img src="./src/img/{{page2.authorImg}}">
                         </div>
                     </div>
                     <div class="col-xs-12 col-md-7 box-info">
@@ -85,9 +85,9 @@
                                     controls
                                     loop
                                     muted
-                                    poster="../src/img/智慧平台.png"
+                                    poster="./src/img/project.png"
                             >
-                                <source src="../src/viedo/智慧化平台演示.mp4" type="video/mp4">
+                                <source src="./src/viedo/智慧化平台演示.mp4" type="video/mp4">
                                 Your browser does not support the video tag.
                             </video>
                         </div>
@@ -99,7 +99,7 @@
 
         <script>
             document.getElementById('downloadButton').addEventListener('click', function() {
-                var fileUrl = '../src/Transformer_VQ-VAE.txt';
+                var fileUrl = './src/Transformer_VQ-VAE.txt';
 
                 fetch(fileUrl)
                     .then(response => response.blob())
@@ -187,7 +187,7 @@
   border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   transition: transform 0.3s ease;">
-                                <source src="../src/viedo/Straight.mp4" type="video/mp4">
+                                <source src="./src/viedo/Straight.mp4" type="video/mp4">
                             </video>
                         </div>
                         <div class="image-wrapper" style="width: calc(50% - 10px); /* 减去间距，确保图片宽度为容器宽度的一半 */
@@ -206,7 +206,7 @@
   border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   transition: transform 0.3s ease;">
-                                <source src="../src/viedo/crossroads.mp4" type="video/mp4">
+                                <source src="./src/viedo/crossroads.mp4" type="video/mp4">
                             </video>
                         </div>
                         <div class="image-wrapper" style="width: calc(50% - 10px); /* 减去间距，确保图片宽度为容器宽度的一半 */
@@ -225,7 +225,7 @@
   border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   transition: transform 0.3s ease;">
-                                <source src="../src/viedo/RaceTrack.mp4" type="video/mp4">
+                                <source src="./src/viedo/RaceTrack.mp4" type="video/mp4">
                             </video>
                         </div>
                         <div class="image-wrapper" style="width: calc(50% - 10px); /* 减去间距，确保图片宽度为容器宽度的一半 */
@@ -244,7 +244,7 @@
   border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   transition: transform 0.3s ease;">
-                                <source src="../src/viedo/turntable.mp4" type="video/mp4">
+                                <source src="./src/viedo/turntable.mp4" type="video/mp4">
                             </video>
                         </div>
                     </div>
