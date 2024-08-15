@@ -1,8 +1,8 @@
 export default {
   // page1部分
   page1: {
-    titleEn: '你好 我叫滕述臣',
-    title: '一个走在AI路上的旅行者',
+    titleEn: 'Hi, I'm Cryan',
+    title: '一个AI的研究者与实践者，在这个平台我会分享一些我的研究。',
   },
   // page2部分
   page2: {
