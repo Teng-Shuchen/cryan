@@ -1,7 +1,7 @@
 export default {
   // page1部分
   page1: {
-    titleEn: 'Hi, I'm Cryan',
+    titleEn: 'Hi, I am Cryan',
     title: '一个AI的研究者与实践者，在这个平台我会分享一些我的研究。',
   },
   // page2部分
