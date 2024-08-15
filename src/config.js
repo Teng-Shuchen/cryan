@@ -2,12 +2,12 @@ export default {
   // page1部分
   page1: {
     titleEn: 'Hi, I am Cryan',
-    title: '一个AI的研究者与实践者，在这个平台我会分享一些我的研究。',
+    title: '一个AI的研究者与实践者',
   },
   // page2部分
   page2: {
     // authorImg: 'page1.jpg',
-    authorImg: '微信头像.jpg',
+    authorImg: 'picture.jpg',
     xinhui: '我叫滕述臣，一名在读研究生。',
     // qiuzhi: '',
     guanyuwo: '熟练使用Java、Python语言以及Pytorch等深度学习框架；熟悉前后端开发框架；熟练掌握Transformer系列模型架构和原理。有着拥有丰富的政府端与企业端的项目经验，实习阶段参与过自动驾驶模型开发。' +
